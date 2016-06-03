@@ -23,9 +23,10 @@ $(function() {
 	   firstName = name.split(' ').slice(0, -1).join(' ');
          }        
 	 $.ajax({
-                url: "https://mail.google.com",
-            	type: "POST",
+                url: "https://formspree.io/Kenneth.oden23@gmail.com", 
+    				method: "POST",
             	data: {name: name, email: email, message: message},
+				dataType: "json",
             	cache: false,
             	success: function() {  
             	// Success message
@@ -45,7 +46,7 @@ $(function() {
  		 $('#success').html("<div class='alert alert-danger'>");
             	$('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             	 .append( "</button>");
-            	$('#success > .alert-danger').append("<strong>Sorry "+firstName+" it seems that my mail server is not responding...</strong> Could you please email me directly to <a href='https://mail.google.com/mail/u/0/#inbox?Subject=Message_Me from Kenneth.oden23@gmail.com'>Kenneth.oden23@gmail.com</a> ? Sorry for the inconvenience!");
+            	$('#success > .alert-danger').append("<strong>Sorry "+firstName+" it seems that my mail server is not responding...</strong> Could you please email me directly to <a href='https://formspree.io/Kenneth.oden23@gmail.com'>Kenneth.oden23@gmail.com</a> ? Sorry for the inconvenience!");
  	        $('#success > .alert-danger').append('</div>');
  		//clear all fields
  		$('#contactForm').trigger("reset");
